@@ -19,5 +19,3 @@ Este projeto implementa um servidor de descoberta de serviços com **Spring Clou
 - Java 17+
 - Spring Boot 3.1+
 - Maven 3.9+
-
-Veja o projeto em: [repositório](https://github.com/marcellopedrosa/eureka-server)
