@@ -1,0 +1,33 @@
+server:
+  port: 8761
+
+spring:
+  application:
+    name: eureka-server
+  profiles:
+    active: prd
+
+eureka:
+  client:
+    register-with-eureka: false
+    fetch-registry: false
+
+management:
+  tracing:
+    enabled: true
+    sampling:
+      probability: 0.1
+    propagation:
+      type: b3
+  zipkin:
+    tracing:
+      endpoint: ${ZIPKIN_URL}
+
+logging:
+  level:
+    root: WARN
+    '[org.springframework.web]': ERROR
+    '[com.netflix.eureka]': ERROR
+    '[org.springframework.cloud.netflix.eureka]': WARN
+  pattern:
+    console: "%d{yyyy-MM-dd HH:mm:ss} [%thread] %-5level %logger{36} - %msg%n"
