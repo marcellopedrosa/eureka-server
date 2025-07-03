@@ -1,5 +1,5 @@
 server:
-  port: 8761
+  port: ${SPRING_CLOUD_EUREKA_PORT}
 
 spring:
   application:
@@ -22,12 +22,3 @@ management:
   zipkin:
     tracing:
       endpoint: ${ZIPKIN_URL}
-
-logging:
-  level:
-    root: WARN
-    '[org.springframework.web]': ERROR
-    '[com.netflix.eureka]': ERROR
-    '[org.springframework.cloud.netflix.eureka]': WARN
-  pattern:
-    console: "%d{yyyy-MM-dd HH:mm:ss} [%thread] %-5level %logger{36} - %msg%n"
